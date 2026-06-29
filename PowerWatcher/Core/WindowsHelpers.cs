@@ -6,7 +6,8 @@ namespace PowerWatcher.Core
     public class WindowsHelpers
     {
         private static readonly string AppName = "PowerWatcher";
-        private static readonly string AppPath = Application.ExecutablePath;
+        // runs the app in the background
+        private static readonly string RunAppCommand = $"\"{Application.ExecutablePath}\" -hidden";
 
         public static bool ChangeAppStartupWhenUserLoggesIn(bool Enable)
         {
@@ -19,7 +20,7 @@ namespace PowerWatcher.Core
             try
             {
                 if (Enable)
-                    RunKey.SetValue(AppName, $"\"{AppPath}\"");
+                    RunKey.SetValue(AppName, RunAppCommand);
                 else
                     RunKey.DeleteValue(AppName, false);
 
@@ -48,7 +49,7 @@ namespace PowerWatcher.Core
             {
                 object AppRecordValue = RunKey.GetValue(AppName);
 
-                if (AppRecordValue == null || !AppRecordValue.Equals(AppPath))
+                if (AppRecordValue == null || !AppRecordValue.Equals(RunAppCommand))
                     return false;
                 else
                     return true;

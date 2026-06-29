@@ -110,17 +110,34 @@ namespace PowerWatcher.GUI
             Settings.Default.Save();
         }
 
+        private bool _IsChkRunOnStartupInitializing = false;
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
             if (Enum.IsDefined(typeof(ActionToTake), Settings.Default.ActionToTake))
                 CbActionToTake.SelectedIndex = Settings.Default.ActionToTake;
             else
                 CbActionToTake.SelectedIndex = 0;
+
+            if (WindowsHelpers.IsAppStartupWhenUserLoggesInEnabled())
+            {
+                _IsChkRunOnStartupInitializing = true;
+                ChkRunOnStartup.Checked = true;
+                _IsChkRunOnStartupInitializing = false;
+            }
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ChkRunOnStartup_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_IsChkRunOnStartupInitializing) return;
+
+            if (!WindowsHelpers.ChangeAppStartupWhenUserLoggesIn(ChkRunOnStartup.Checked))
+                MessageBox.Show("Some thing went wrong, Cannot Edit this option", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
     }
 }
