@@ -1,0 +1,166 @@
+﻿namespace PowerWatcher.GUI
+{
+    partial class FrmAlarmOverlay
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlarmOverlay));
+            this.LbAlarmMessage = new System.Windows.Forms.Label();
+            this.BtnClose = new System.Windows.Forms.Button();
+            this.BtnHibernate = new System.Windows.Forms.Button();
+            this.BtnShutdown = new System.Windows.Forms.Button();
+            this.BtnSleep = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // LbAlarmMessage
+            // 
+            this.LbAlarmMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LbAlarmMessage.BackColor = System.Drawing.Color.Transparent;
+            this.LbAlarmMessage.Font = new System.Drawing.Font("Segoe UI", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbAlarmMessage.ForeColor = System.Drawing.Color.Maroon;
+            this.LbAlarmMessage.Location = new System.Drawing.Point(28, 87);
+            this.LbAlarmMessage.Name = "LbAlarmMessage";
+            this.LbAlarmMessage.Size = new System.Drawing.Size(851, 103);
+            this.LbAlarmMessage.TabIndex = 0;
+            this.LbAlarmMessage.Text = "Warning: Charger Unpluged";
+            this.LbAlarmMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BtnClose
+            // 
+            this.BtnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClose.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.BtnClose.ForeColor = System.Drawing.Color.White;
+            this.BtnClose.Location = new System.Drawing.Point(361, 401);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(184, 65);
+            this.BtnClose.TabIndex = 0;
+            this.BtnClose.Text = "Close";
+            this.BtnClose.UseVisualStyleBackColor = false;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // BtnHibernate
+            // 
+            this.BtnHibernate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnHibernate.BackColor = System.Drawing.Color.Silver;
+            this.BtnHibernate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnHibernate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnHibernate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnHibernate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnHibernate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnHibernate.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.BtnHibernate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BtnHibernate.Location = new System.Drawing.Point(361, 317);
+            this.BtnHibernate.Name = "BtnHibernate";
+            this.BtnHibernate.Size = new System.Drawing.Size(184, 65);
+            this.BtnHibernate.TabIndex = 1;
+            this.BtnHibernate.Text = "Hibernate";
+            this.BtnHibernate.UseVisualStyleBackColor = false;
+            this.BtnHibernate.Click += new System.EventHandler(this.BtnHibernate_Click);
+            // 
+            // BtnShutdown
+            // 
+            this.BtnShutdown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnShutdown.BackColor = System.Drawing.Color.Silver;
+            this.BtnShutdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnShutdown.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnShutdown.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnShutdown.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnShutdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShutdown.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.BtnShutdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnShutdown.Location = new System.Drawing.Point(580, 317);
+            this.BtnShutdown.Name = "BtnShutdown";
+            this.BtnShutdown.Size = new System.Drawing.Size(184, 65);
+            this.BtnShutdown.TabIndex = 2;
+            this.BtnShutdown.Text = "Shutdown";
+            this.BtnShutdown.UseVisualStyleBackColor = false;
+            this.BtnShutdown.Click += new System.EventHandler(this.BtnShutdown_Click);
+            // 
+            // BtnSleep
+            // 
+            this.BtnSleep.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnSleep.BackColor = System.Drawing.Color.Silver;
+            this.BtnSleep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSleep.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnSleep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnSleep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnSleep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSleep.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.BtnSleep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BtnSleep.Location = new System.Drawing.Point(142, 317);
+            this.BtnSleep.Name = "BtnSleep";
+            this.BtnSleep.Size = new System.Drawing.Size(184, 65);
+            this.BtnSleep.TabIndex = 3;
+            this.BtnSleep.Text = "Sleep";
+            this.BtnSleep.UseVisualStyleBackColor = false;
+            this.BtnSleep.Click += new System.EventHandler(this.BtnSleep_Click);
+            // 
+            // FrmAlarmOverlay
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(907, 552);
+            this.ControlBox = false;
+            this.Controls.Add(this.BtnSleep);
+            this.Controls.Add(this.BtnShutdown);
+            this.Controls.Add(this.BtnHibernate);
+            this.Controls.Add(this.BtnClose);
+            this.Controls.Add(this.LbAlarmMessage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmAlarmOverlay";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RightToLeftLayout = true;
+            this.ShowInTaskbar = false;
+            this.Text = "تنبيه";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAlarmOverlay_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAlarmOverlay_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label LbAlarmMessage;
+        private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Button BtnHibernate;
+        private System.Windows.Forms.Button BtnShutdown;
+        private System.Windows.Forms.Button BtnSleep;
+    }
+}

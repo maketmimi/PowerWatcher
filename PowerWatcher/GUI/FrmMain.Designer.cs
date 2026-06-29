@@ -1,4 +1,4 @@
-﻿namespace PowerWatcher
+﻿namespace PowerWatcher.GUI
 {
     partial class FrmMain
     {
@@ -33,8 +33,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ChkActivateStop = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TolActionToTake = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.CbActionToTake = new System.Windows.Forms.ComboBox();
+            this.TolActionToTake = new System.Windows.Forms.ToolTip(this.components);
             this.ImgMain = new System.Windows.Forms.ImageList(this.components);
             this.LibMalekGithub = new System.Windows.Forms.LinkLabel();
             this.BtnHide = new System.Windows.Forms.Button();
@@ -51,17 +52,21 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(402, 125);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
             // 
             // ChkActivateStop
             // 
             this.ChkActivateStop.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ChkActivateStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ChkActivateStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.ChkActivateStop.Checked = true;
+            this.ChkActivateStop.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkActivateStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ChkActivateStop.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ChkActivateStop.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.ChkActivateStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.ChkActivateStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ChkActivateStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChkActivateStop.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkActivateStop.ForeColor = System.Drawing.Color.White;
@@ -69,39 +74,60 @@
             this.ChkActivateStop.Name = "ChkActivateStop";
             this.ChkActivateStop.Size = new System.Drawing.Size(155, 61);
             this.ChkActivateStop.TabIndex = 0;
-            this.ChkActivateStop.Text = "Stopped";
+            this.ChkActivateStop.Text = "Active";
             this.ChkActivateStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ChkActivateStop.UseVisualStyleBackColor = false;
             this.ChkActivateStop.CheckedChanged += new System.EventHandler(this.ChkActivateStop_CheckedChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.CbActionToTake);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox2.Location = new System.Drawing.Point(12, 134);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(402, 110);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Action To Take";
-            this.TolActionToTake.SetToolTip(this.groupBox2, "Choose what happens when the laptop is unplugged.");
             // 
-            // TolActionToTake
+            // label1
             // 
-            this.TolActionToTake.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(44, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(314, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Make sure the selected action is supported by your system.\r\nOtherwise it will be " +
+    "overriden";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CbActionToTake
             // 
             this.CbActionToTake.BackColor = System.Drawing.Color.White;
             this.CbActionToTake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbActionToTake.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbActionToTake.ForeColor = System.Drawing.Color.Black;
             this.CbActionToTake.FormattingEnabled = true;
+            this.CbActionToTake.Items.AddRange(new object[] {
+            "Show alarm overlay",
+            "Hibernate Mode (If Supported)",
+            "Sleep Mode (If Supported)",
+            "Shutdown"});
             this.CbActionToTake.Location = new System.Drawing.Point(92, 47);
             this.CbActionToTake.Name = "CbActionToTake";
-            this.CbActionToTake.Size = new System.Drawing.Size(218, 38);
-            this.CbActionToTake.TabIndex = 1;
+            this.CbActionToTake.Size = new System.Drawing.Size(218, 28);
+            this.CbActionToTake.TabIndex = 0;
             this.TolActionToTake.SetToolTip(this.CbActionToTake, "Choose what happens when the laptop is unplugged.");
+            this.CbActionToTake.SelectedIndexChanged += new System.EventHandler(this.CbActionToTake_SelectedIndexChanged);
+            // 
+            // TolActionToTake
+            // 
+            this.TolActionToTake.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.TolActionToTake.ToolTipTitle = "Info";
             // 
             // ImgMain
             // 
@@ -123,7 +149,7 @@
             this.LibMalekGithub.Location = new System.Drawing.Point(8, 262);
             this.LibMalekGithub.Name = "LibMalekGithub";
             this.LibMalekGithub.Size = new System.Drawing.Size(252, 27);
-            this.LibMalekGithub.TabIndex = 4;
+            this.LibMalekGithub.TabIndex = 3;
             this.LibMalekGithub.TabStop = true;
             this.LibMalekGithub.Text = "Developed by Malek Altamimi";
             this.LibMalekGithub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,7 +169,7 @@
             this.BtnHide.Location = new System.Drawing.Point(351, 263);
             this.BtnHide.Name = "BtnHide";
             this.BtnHide.Size = new System.Drawing.Size(63, 27);
-            this.BtnHide.TabIndex = 5;
+            this.BtnHide.TabIndex = 2;
             this.BtnHide.Text = "Hide";
             this.BtnHide.UseVisualStyleBackColor = false;
             this.BtnHide.Click += new System.EventHandler(this.BtnHide_Click);
@@ -173,8 +199,10 @@
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "Power Watcher";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +218,7 @@
         private System.Windows.Forms.LinkLabel LibMalekGithub;
         private System.Windows.Forms.Button BtnHide;
         private System.Windows.Forms.NotifyIcon NiMain;
+        private System.Windows.Forms.Label label1;
     }
 }
 

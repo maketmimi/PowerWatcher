@@ -1,0 +1,2 @@
+﻿1- Add power modes support checks
+2- add startup feature

@@ -60,6 +60,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Actions.cs" />
+    <Compile Include="Core\WindowsHelpers.cs" />
+    <Compile Include="GUI\FrmAlarmOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmAlarmOverlay.Designer.cs">
+      <DependentUpon>FrmAlarmOverlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FrmAlarmOverlay.resx">
+      <DependentUpon>FrmAlarmOverlay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,14 +105,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Assets\ACUnplugedSoundEffect.mp3" />
+    <Content Include="Assets\ACUnplugedSoundEffect.wav" />
     <Content Include="Assets\MalekAltamimi_Logo.png" />
+    <Content Include="Assets\OverlayBackground.png" />
+    <Content Include="Assets\OverlayBackgroundSmallSize.png" />
     <Content Include="Assets\PowerWatcher.ico" />
     <Content Include="Assets\PowerWatcher.png" />
     <Content Include="PowerWatcher.ico" />
+    <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
