@@ -36,12 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CbActionToTake = new System.Windows.Forms.ComboBox();
             this.TolActionToTake = new System.Windows.Forms.ToolTip(this.components);
+            this.ChkRunOnStartup = new System.Windows.Forms.CheckBox();
             this.ImgMain = new System.Windows.Forms.ImageList(this.components);
             this.LibMalekGithub = new System.Windows.Forms.LinkLabel();
             this.BtnHide = new System.Windows.Forms.Button();
             this.NiMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.ChkRunOnStartup = new System.Windows.Forms.CheckBox();
             this.GbSettings = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -134,6 +134,21 @@
             this.TolActionToTake.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.TolActionToTake.ToolTipTitle = "Info";
             // 
+            // ChkRunOnStartup
+            // 
+            this.ChkRunOnStartup.AutoSize = true;
+            this.ChkRunOnStartup.BackColor = System.Drawing.Color.Transparent;
+            this.ChkRunOnStartup.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkRunOnStartup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ChkRunOnStartup.Location = new System.Drawing.Point(12, 40);
+            this.ChkRunOnStartup.Name = "ChkRunOnStartup";
+            this.ChkRunOnStartup.Size = new System.Drawing.Size(198, 25);
+            this.ChkRunOnStartup.TabIndex = 0;
+            this.ChkRunOnStartup.Text = "Run this app on startup";
+            this.TolActionToTake.SetToolTip(this.ChkRunOnStartup, "Determines whether the application launches automatically upon user login.");
+            this.ChkRunOnStartup.UseVisualStyleBackColor = false;
+            this.ChkRunOnStartup.CheckedChanged += new System.EventHandler(this.ChkRunOnStartup_CheckedChanged);
+            // 
             // ImgMain
             // 
             this.ImgMain.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImgMain.ImageStream")));
@@ -199,21 +214,6 @@
             this.MainPanel.Size = new System.Drawing.Size(412, 270);
             this.MainPanel.TabIndex = 0;
             // 
-            // ChkRunOnStartup
-            // 
-            this.ChkRunOnStartup.AutoSize = true;
-            this.ChkRunOnStartup.BackColor = System.Drawing.Color.Transparent;
-            this.ChkRunOnStartup.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkRunOnStartup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ChkRunOnStartup.Location = new System.Drawing.Point(12, 40);
-            this.ChkRunOnStartup.Name = "ChkRunOnStartup";
-            this.ChkRunOnStartup.Size = new System.Drawing.Size(198, 25);
-            this.ChkRunOnStartup.TabIndex = 0;
-            this.ChkRunOnStartup.Text = "Run this app on startup";
-            this.TolActionToTake.SetToolTip(this.ChkRunOnStartup, "Determines whether the application launches automatically upon user login.");
-            this.ChkRunOnStartup.UseVisualStyleBackColor = false;
-            this.ChkRunOnStartup.CheckedChanged += new System.EventHandler(this.ChkRunOnStartup_CheckedChanged);
-            // 
             // GbSettings
             // 
             this.GbSettings.Controls.Add(this.ChkRunOnStartup);
@@ -244,7 +244,6 @@
             this.Name = "FrmMain";
             this.Text = "Power Watcher";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
-            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

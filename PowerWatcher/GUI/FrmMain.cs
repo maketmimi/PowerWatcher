@@ -15,6 +15,22 @@ namespace PowerWatcher.GUI
         {
             InitializeComponent();
             SystemEvents.PowerModeChanged += SystemEvents_PowerModeChanged;
+            InitializeAppConfigs();
+        }
+
+        private void InitializeAppConfigs()
+        {
+            if (Enum.IsDefined(typeof(ActionToTake), Settings.Default.ActionToTake))
+                CbActionToTake.SelectedIndex = Settings.Default.ActionToTake;
+            else
+                CbActionToTake.SelectedIndex = 0;
+
+            if (WindowsHelpers.IsAppStartupWhenUserLoggesInEnabled())
+            {
+                _IsChkRunOnStartupInitializing = true;
+                ChkRunOnStartup.Checked = true;
+                _IsChkRunOnStartupInitializing = false;
+            }
         }
 
         private void ShowAlarmOverlay()
@@ -111,21 +127,6 @@ namespace PowerWatcher.GUI
         }
 
         private bool _IsChkRunOnStartupInitializing = false;
-
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-            if (Enum.IsDefined(typeof(ActionToTake), Settings.Default.ActionToTake))
-                CbActionToTake.SelectedIndex = Settings.Default.ActionToTake;
-            else
-                CbActionToTake.SelectedIndex = 0;
-
-            if (WindowsHelpers.IsAppStartupWhenUserLoggesInEnabled())
-            {
-                _IsChkRunOnStartupInitializing = true;
-                ChkRunOnStartup.Checked = true;
-                _IsChkRunOnStartupInitializing = false;
-            }
-        }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
