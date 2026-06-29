@@ -117,6 +117,10 @@ namespace PowerWatcher.GUI
             else
                 CbActionToTake.SelectedIndex = 0;
         }
-    
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

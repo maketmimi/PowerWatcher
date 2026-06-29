@@ -199,6 +199,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "Power Watcher";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

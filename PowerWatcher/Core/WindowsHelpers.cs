@@ -5,6 +5,9 @@ namespace PowerWatcher.Core
 {
     public class WindowsHelpers
     {
+        private static readonly string AppName = "PowerWatcher";
+        private static readonly string AppPath = Application.ExecutablePath;
+
         public static bool ChangeAppStartupWhenUserLoggesIn(bool Enable)
         {
             RegistryKey RunKey = Registry.CurrentUser.OpenSubKey(
@@ -15,9 +18,6 @@ namespace PowerWatcher.Core
 
             try
             {
-                string AppName = "PowerWatcher";
-                string AppPath = Application.ExecutablePath;
-
                 if (Enable)
                     RunKey.SetValue(AppName, $"\"{AppPath}\"");
                 else
@@ -40,19 +40,18 @@ namespace PowerWatcher.Core
         {
             RegistryKey RunKey = Registry.CurrentUser.OpenSubKey(
                 @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",
-                true);
+                false);
 
             if (RunKey == null) return false;
 
             try
             {
-                string AppName = "PowerWatcher";
-                string AppPath = Application.ExecutablePath;
-
                 object AppRecordValue = RunKey.GetValue(AppName);
 
                 if (AppRecordValue == null || !AppRecordValue.Equals(AppPath))
                     return false;
+                else
+                    return true;
             }
             catch
             {
@@ -63,6 +62,5 @@ namespace PowerWatcher.Core
                 RunKey.Close();
             }
         }
-
     }
 }
